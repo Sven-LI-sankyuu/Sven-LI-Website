@@ -21,7 +21,7 @@
 
 ## 当前内容基线
 
-首期公开资料包括作者简介、教育与工作经历，以及由用户确认的精选论文。当前参考项目里可供选择的真实论文包括 Compliance-to-Code、Fedspeak Confidence、KnowMT-Bench，最终入选名单与顺序由用户确认。参考项目中的 Pandas、PyTorch、scikit-learn、Example Talk、模板博客和 Learn Python/JavaScript 属于主题示例，保留在 `references/` 供视觉对照，不进入新站点内容数据。
+首期公开资料包括作者简介、教育与工作经历，以及由用户确认的精选论文和首个项目 `presentation-skills`。当前可公开的真实论文包括 Compliance-to-Code、From Statute to Control Flow、KnowMT-Bench 和 Fedspeak Confidence，最终顺序由当前站点的数据层决定。参考项目中的 Pandas、PyTorch、scikit-learn、Example Talk、模板博客和 Learn Python/JavaScript 属于主题示例，保留在 `references/` 供视觉对照，不进入新站点内容数据。
 
 ## 技术决策
 
@@ -53,11 +53,11 @@ locale 是所有页面的第一段路径；根路径由 Next.js 16 的 `proxy.ts
 | `/en/blog`、`/zh/blog` | 首期 | 当前语言的已发布文章列表 |
 | `/en/blog/[slug]`、`/zh/blog/[slug]` | 首期 | Markdown 文章正文、日期、标签和可选封面 |
 | `/en/feed.xml`、`/zh/feed.xml` | 首期 | 当前语言已发布文章的 RSS 订阅 |
-| `/en/projects`、`/zh/projects` | 出现真实项目时 | 项目卡片与外部项目链接 |
+| `/en/projects`、`/zh/projects` | 首期 | 个人项目列表、项目简介和外部项目链接 |
 | `/en/talks`、`/zh/talks` | 出现真实演讲时 | 演讲和活动列表 |
 | `/en/teaching`、`/zh/teaching` | 出现真实教学内容时 | 课程与教学材料 |
 
-首期导航包含 Bio、Papers、Experience、Blog 和 CV。Blog 尚无已发布文章时隐藏导航项，作者把任一 Markdown 的 `draft` 改为 `false` 后，下一次构建自动启用入口。后续页面与导航项在同一次改动中启用，避免空入口。导航文字由 locale 文案提供，主题和语言控件使用图标按钮并提供可访问名称。
+首期导航包含 Bio、Papers、Projects、Experience、Blog 和 CV。Blog 尚无已发布文章时隐藏导航项，作者把任一 Markdown 的 `draft` 改为 `false` 后，下一次构建自动启用入口。后续页面与导航项在同一次改动中启用，避免空入口。导航文字由 locale 文案提供，主题和语言控件使用图标按钮并提供可访问名称。
 
 ## 页面组成
 
@@ -67,7 +67,8 @@ locale 是所有页面的第一段路径；根路径由 Next.js 16 的 `proxy.ts
 2. `BiographyHero`：头像、姓名 `Siyuan (Sven) LI`、职位 `Mphil Student`、机构 HKUST(GZ)、简介、社交链接、`Download CV`。
 3. `ResearchIntro`：研究方向为 LLM Agent、Knowledge Graph、NLP Financial Applications、Auto-Financial Researching。
 4. `PublicationList`：经用户确认的精选论文适配参考 `Projects`/`ProjectItem` 的列表结构和交互，首页只显示前五条；超出五条时显示省略行和完整页入口，未超出五条时保留完整页入口。
-5. `SiteFooter`：访问计数器、字体声明和版权。
+5. `ProjectsList`：个人项目列表，首页只显示首个确认项目 `presentation-skills`，并提供完整页入口。
+6. `SiteFooter`：访问计数器、字体声明和版权。
 
 `BiographyHero` 内嵌 Matrix 动画背景。MLP 动画保留为可用资源，但默认不作为全站背景挂载，避免首页视觉噪声压过文字内容。正文层必须拥有独立堆叠上下文和实色/半透明背景，确保动画不会覆盖文字、链接或焦点状态。
 
@@ -87,7 +88,7 @@ locale 是所有页面的第一段路径；根路径由 Next.js 16 的 `proxy.ts
 
 首期明确复用 `Panel`、`ProfileHeader` 的信息层级、`Overview`、`SocialLinks`、`Experiences`、`Education`、`Timeline`、Blog 的 `PostList`/`PostItem`/`PostSearchInput`、文章的 `DocLayout`/`DocPageRoot`、`Prose` 以及 `screen-line-*` 和 `stripe-divider` 工具类。复用时只替换内容接口、locale 路径、个人品牌和数据来源，不复制参考项目的个人资料、registry、赞助、统计和品牌资产。
 
-语言切换、Matrix/MLP 动画包装器、访问计数器、精选论文完整页和 Experience 完整页属于当前客观缺口。它们可以新建，但必须保持小边界：语言控件只处理 locale 路径与偏好，动画包装器只处理 iframe 生命周期与层级，计数器只处理外部图片状态，论文与经历列表只把内容数据映射到参考 `Projects` 列表密度。新增组件不得重新定义参考项目已有的布局或按钮样式。
+语言切换、Matrix/MLP 动画包装器和访问计数器属于当前客观缺口。精选论文完整页、Projects 完整页和 Experience 完整页已经纳入首期页面，它们只复用现有布局，不重新定义交互模型。新增组件必须保持小边界：语言控件只处理 locale 路径与偏好，动画包装器只处理 iframe 生命周期与层级，计数器只处理外部图片状态，论文、项目与经历列表只把内容数据映射到参考 `Projects` 列表密度。新增组件不得重新定义参考项目已有的布局或按钮样式。
 
 参考项目代码按 MIT License 使用，并保留许可声明；`TRADEMARK.md` 排除 `chanhdai`/`ncdai` 名称、wordmark、mark、头像、肖像和易造成归属误认的品牌呈现。OPPO Sans 替换参考项目字体，Matrix、MLP 和计数器继续使用原个人站点资源。
 
@@ -144,9 +145,19 @@ type Publication = {
   cover?: string
   links: { paper?: string; code?: string; dataset?: string }
 }
+
+type Project = {
+  slug: string
+  title: LocalizedText
+  summary: LocalizedText
+  description: LocalizedText
+  link: string
+  tags: string[]
+  order: number
+}
 ```
 
-`src/content/publications/` 只收录精选论文，每篇论文的 `index.ts` 同时保存双语文字和不随语言变化的共享事实，`order` 表达显示顺序。教育沿用 `Experience` 的时间线形状，技能与语言使用简单数组。未来的 `Project`、`Talk` 和 `Teaching` 在出现真实数据时再选择合适的源文件格式；Blog 始终使用普通 Markdown，不引入 MDX。
+`src/content/publications/` 只收录精选论文，每篇论文的 `index.ts` 同时保存双语文字和不随语言变化的共享事实，`order` 表达显示顺序。`src/content/projects/` 只收录确认过的个人项目，每个项目保存双语摘要、简述、标签和外部链接。教育沿用 `Experience` 的时间线形状，技能与语言使用简单数组。`Talk` 和 `Teaching` 在出现真实数据时再选择合适的源文件格式；Blog 始终使用普通 Markdown，不引入 MDX。
 
 `src/lib/content/validate.ts` 使用项目内断言检查双语文字非空、slug 唯一、论文 `order` 唯一、ISO 日期有效、URL 可解析、本地图片存在。Blog 同名译文的 `date`、`tags`、`draft` 和 `cover` 必须一致，避免共享事实漂移。检查函数在测试和生产构建前执行，不引入 schema 库。
 
@@ -224,11 +235,11 @@ src/
     experience/index.ts # 教育、工作、技能和语言
     publications/
       <slug>/index.ts  # 一篇精选论文的双语资料与共享事实
+    projects/index.ts  # 确认过的个人项目与展示摘要
     blog/
       zh/<slug>/index.md # 中文文章真源
       en/<slug>/index.md # 英文文章真源或译文
     talks/             # 真实演讲出现时定义内部格式
-    projects/          # 真实项目出现时定义内部格式
     teaching/          # 真实教学内容出现时定义内部格式
   i18n/
     messages.ts        # 导航、按钮、状态等双语界面文案
@@ -252,7 +263,7 @@ public/
   downloads/           # resume.pdf 等公开下载文件
 ```
 
-`projects`、`talks` 和 `teaching` 的路由目录在相应内容确认后创建。Blog 路由首期实现，公开导航由已发布文章数量决定。首期目录不放占位文章或“Coming Soon”页面。
+`talks` 和 `teaching` 的路由目录在相应内容确认后创建。Blog 路由首期实现，公开导航由已发布文章数量决定。首期目录不放占位文章或“Coming Soon”页面。
 
 内容真源与公开资产按同一类别和 slug 对齐：TypeScript 与 Markdown 真源只在 `src/content/`，浏览器直接访问的图片、海报和附件只在 `public/assets/`。动画、字体和下载文件拥有独立的公共目录，页面组件通过明确的 URL 引用它们。
 
@@ -263,9 +274,9 @@ public/
 | Profile | `src/content/profile/index.ts` | `public/assets/profile/` | 使用 |
 | Experience | `src/content/experience/index.ts` | `public/assets/experience/` | 使用 |
 | Publications | `src/content/publications/<slug>/index.ts` | `public/assets/publications/<slug>/` | 精选名单使用 |
+| Projects | `src/content/projects/index.ts` | `public/assets/projects/` | 首期使用，媒体按需定义 |
 | Blog | `src/content/blog/<locale>/<slug>/index.md` | `public/assets/blog/<slug>/` | 使用 |
 | Talks | `src/content/talks/` | `public/assets/talks/<slug>/` | 按需定义 |
-| Projects | `src/content/projects/` | `public/assets/projects/<slug>/` | 按需定义 |
 | Teaching | `src/content/teaching/` | `public/assets/teaching/<slug>/` | 按需定义 |
 
 ## 性能、可访问性与验证

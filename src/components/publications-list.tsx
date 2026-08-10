@@ -49,7 +49,13 @@ function PublicationItem({ locale, publication, detail }: { locale: Locale; publ
   const messages = getMessages(locale)
   return (
     <li className="group grid gap-4 py-5 sm:grid-cols-[9rem_minmax(0,1fr)] lg:grid-cols-[11rem_minmax(0,1fr)]">
-      <Image src={publication.cover} alt="" width={320} height={200} className="aspect-[8/5] w-full rounded-md object-cover transition-[filter] duration-300 group-hover:brightness-105" />
+      {publication.cover ? (
+        <Image src={publication.cover} alt="" width={320} height={200} className="aspect-[8/5] w-full rounded-md object-cover transition-[filter] duration-300 group-hover:brightness-105" />
+      ) : (
+        <div className="flex aspect-[8/5] w-full items-center justify-center rounded-md border border-line bg-muted/40 text-muted-foreground">
+          <FileTextIcon aria-hidden className="size-8" />
+        </div>
+      )}
       <div className="min-w-0">
         <div className="mb-1 flex items-start justify-between gap-3">
           <h3 className="text-lg leading-snug font-medium text-balance"><Link href={`/${locale}/publications/${publication.slug}`} className="link-underline">{publication.title}</Link></h3>

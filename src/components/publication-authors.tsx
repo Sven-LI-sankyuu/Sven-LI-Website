@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 const selfAuthorNames = new Set(["siyuan li", "siyuan (sven) li"])
 
 function normalizeAuthorName(name: string) {
-  return name.toLowerCase().replace(/\s+/g, " ").trim()
+  return name.toLowerCase().replace(/\*/g, "").replace(/\s+/g, " ").trim()
 }
 
 export function PublicationAuthors({ authors, className }: { authors: string[]; className?: string }) {

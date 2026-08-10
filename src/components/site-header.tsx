@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { BookOpenTextIcon, BriefcaseBusinessIcon, HomeIcon } from "lucide-react"
+import { BookOpenTextIcon, BriefcaseBusinessIcon, FolderKanbanIcon, HomeIcon } from "lucide-react"
 
 import { Button } from "@/components/base/ui/button"
 import { LocaleToggle } from "@/components/locale-toggle"
@@ -25,6 +25,7 @@ export function SiteHeader({ locale, hasBlog }: { locale: Locale; hasBlog: boole
         <nav className="hidden flex-1 items-center justify-center gap-1 md:flex" aria-label="Primary navigation">
           {navLink(`/${locale}`, messages.nav.home, <HomeIcon aria-hidden />)}
           {navLink(`/${locale}/publications`, messages.nav.papers, <BookOpenTextIcon aria-hidden />)}
+          {navLink(`/${locale}/projects`, messages.nav.projects, <FolderKanbanIcon aria-hidden />)}
           {navLink(`/${locale}/experience`, messages.nav.experience, <BriefcaseBusinessIcon aria-hidden />)}
           {hasBlog && navLink(`/${locale}/blog`, messages.nav.blog, <BookOpenTextIcon aria-hidden />)}
         </nav>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel"
 import { ProfileHeader } from "@/components/profile-header"
 import { PublicationsList } from "@/components/publications-list"
+import { ProjectsList } from "@/components/projects-list"
 import { Research } from "@/components/research"
 import { SocialLinks } from "@/components/social-links"
 import { Timeline } from "@/components/timeline"
@@ -11,6 +12,7 @@ import { Overview } from "@/components/overview"
 import { education, work } from "@/content/experience"
 import { profile } from "@/content/profile"
 import { publications } from "@/content/publications"
+import { projects } from "@/content/projects"
 import { isLocale, type Locale } from "@/i18n/locale"
 import { localize } from "@/i18n/locale"
 import { getMessages } from "@/i18n/messages"
@@ -39,6 +41,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Research locale={locale} />
         <div className="stripe-divider border-x border-line" />
         <PublicationsList locale={locale} publications={publications} limit={5} moreHref={`/${locale}/publications`} />
+        <div className="stripe-divider border-x border-line" />
+        <ProjectsList locale={locale} projects={projects} limit={1} moreHref={`/${locale}/projects`} />
         <div className="stripe-divider border-x border-line" />
         <Timeline id="experience" title={messages.sections.experience} entries={work} locale={locale} limit={5} moreHref={`/${locale}/experience`} />
         <Timeline id="education" title={messages.sections.education} entries={education} locale={locale} />

@@ -14,7 +14,7 @@ export const fedspeakConfidence: Publication = {
   authors: ["Rui Yao", "Qi Chai", "Jinhai Yao", "Siyuan Li", "Junhao Chen", "Qi Zhang", "Hao Wang"],
   date: "2025-08-12",
   venue: "AAAI 2026, Oral",
-  order: 2,
+  order: 4,
   cover: "/assets/publications/fedspeak-confidence/featured.jpg",
   links: {
     paper: "https://arxiv.org/abs/2508.08001",

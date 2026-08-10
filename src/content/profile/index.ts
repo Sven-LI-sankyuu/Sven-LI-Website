@@ -12,8 +12,8 @@ export const profile = {
   email: "lisiyuansven@foxmail.com",
   avatar: "/assets/profile/avatar.jpg",
   summary: {
-    en: "I work on applying large language models to finance, with a focus on financial compliance, financial report generation, and structured knowledge reasoning. I care about outputs that can be checked, explained, and reused in real research workflows.",
-    zh: "我主要研究大语言模型在金融中的应用，重点是金融合规、金融报告生成和结构化知识推理。我更关注结果是否可核查、可解释，并能在真实研究流程中复用。",
+    en: "I build reliable LLM systems for high-stakes legal and financial applications, with a focus on compliance, structured reasoning, report generation, and agentic workflows.",
+    zh: "我主要做面向法律和金融高风险场景的可靠大语言模型系统，重点放在合规、结构化推理、报告生成和智能体流程。",
   },
   interests: [
     { en: "LLM agents", zh: "大语言模型智能体" },

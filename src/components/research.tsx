@@ -12,15 +12,15 @@ export function Research({ locale }: { locale: Locale }) {
   const interests = [
     { en: "LLM agents for tool use, task decomposition, and verifiable reasoning workflows.", zh: "用于工具调用、任务拆解和可核查推理流程的大语言模型智能体。" },
     { en: "Knowledge graphs for structured retrieval, entity relations, and grounded reasoning.", zh: "用于结构化检索、实体关系建模和可靠推理的知识图谱。" },
-    { en: "NLP financial applications, especially financial compliance and financial report generation.", zh: "金融自然语言处理应用，重点是金融合规与金融报告生成。" },
-    { en: "Auto-financial researching, including evidence gathering, screening, summarization, and verification.", zh: "自动化金融研究，包括证据收集、筛选、总结与验证。" },
+    { en: "NLP applications in law and finance, especially compliance and report generation.", zh: "法律与金融场景中的自然语言处理应用，重点是合规与报告生成。" },
+    { en: "Automated financial research, including evidence gathering, screening, summarization, and verification.", zh: "自动化金融研究，包括证据收集、筛选、总结与验证。" },
   ]
   return (
     <Panel id="research">
       <PanelHeader><PanelTitle>{messages.sections.research}</PanelTitle></PanelHeader>
       <PanelContent className="space-y-4">
         <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
-          {locale === "zh" ? "旧站研究方向原文是 LLM Agent、Knowledge Graph、NLP Financial applications 和 Auto-Financial Researching；新版首页保留这些方向，并把每个方向补充成更容易理解的研究入口。" : "The previous site listed LLM Agent, Knowledge Graph, NLP Financial applications, and Auto-Financial Researching. This version keeps those directions and makes each one more explicit for readers."}
+          {locale === "zh" ? "我的研究围绕法律和金融高风险场景中的大语言模型系统，重点放在智能体、知识图谱、合规、报告生成和自动化金融研究。" : "My research centers on LLM systems for high-stakes legal and financial settings, with a focus on agents, knowledge graphs, compliance, report generation, and automated financial research."}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
         {interests.map((interest, index) => {

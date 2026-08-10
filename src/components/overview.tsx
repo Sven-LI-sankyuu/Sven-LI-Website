@@ -14,7 +14,7 @@ export function Overview({ locale }: { locale: Locale }) {
     { icon: MapPinIcon, text: localize(profile.location, locale) },
     { icon: MailIcon, text: profile.email, href: `mailto:${profile.email}` },
     { icon: LinkIcon, text: localize(profile.organization.name, locale), href: profile.organization.href },
-    { icon: CalendarDaysIcon, text: locale === "en" ? "MPhil 2024-2026" : "硕士研究生 2024-2026" },
+    { icon: CalendarDaysIcon, text: locale === "en" ? "MPhil 2024-2026 · PhD 2026-2029" : "硕士 2024-2026 · 博士 2026-2029" },
   ]
 
   return (

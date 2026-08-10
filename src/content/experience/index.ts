@@ -11,34 +11,34 @@ export type TimelineEntry = {
 
 export const work: TimelineEntry[] = [
   {
-    title: { en: "Vice President", zh: "副主席" },
-    organization: { en: "HKUST Quant Trading Society", zh: "香港科技大学量化交易协会" },
-    start: "2024-06",
+    title: { en: "AI Algorithm Engineer", zh: "AI 算法工程师" },
+    organization: { en: "Lingyue Technology Co., Ltd. (AI4Finance Startup)", zh: "灵悦科技有限公司（AI4Finance 创业公司）" },
+    start: "2025-10",
+    end: "2026-05",
     summary: {
-      en: "Provide comprehensive technical support for the website and email system, and coordinate competitions, meetings, publicity, and day-to-day society operations.",
-      zh: "负责网站与邮件系统的综合技术支持，并协调量化交易竞赛、会议、宣传和协会日常运营。",
+      en: "Developed and delivered a compliance component for an investment-advisory system, organized the existing compliance framework into a hierarchical rule structure, and built data pipelines for heterogeneous financial data, company knowledge graphs, and downstream quantitative research.",
+      zh: "为投资顾问系统开发并交付合规模块，将现有合规框架整理为层级规则结构，并搭建面向新闻、公司信息和市场数据的数据管道，产出结构化数据与公司知识图谱，服务量化研究。",
     },
-    href: "https://ustquant.hk/",
   },
   {
-    title: { en: "Credit Risk Analyst Intern", zh: "信用风险分析实习生" },
+    title: { en: "Credit Bond Research Assistant", zh: "信用债研究助理" },
     organization: { en: "Beijing Dingnuo Investment Co., Ltd.", zh: "北京鼎诺投资有限公司" },
     start: "2024-06",
     end: "2024-08",
     summary: {
-      en: "Led the development of a credit-bond default rate prediction system and a real-time credit risk assessment workflow with Python and SQL, using diversified financial data and interpretable models such as XGBoost.",
-      zh: "主导信用债违约率预测系统和实时信用风险评估流程的开发，使用 Python、SQL、丰富的金融数据以及 XGBoost 等可解释模型。",
+      en: "Led the development of a real-time credit risk assessment system with Python and SQL, used diversified financial data and interpretable models such as XGBoost to predict credit-bond default risk, and replicated fixed-income studies from top journals.",
+      zh: "使用 Python 和 SQL 主导实时信用风险评估系统的开发，结合多源金融数据和 XGBoost 等可解释模型预测信用债违约风险，并复现顶级期刊中的固收研究。",
     },
     href: "http://eyounginvest.com/dingnuo/about/about/index.html",
   },
   {
-    title: { en: "Research Assistant Intern, Consumer Sector", zh: "消费行业研究助理实习生" },
+    title: { en: "Industry Research Institute Research Assistant", zh: "行业研究院研究助理" },
     organization: { en: "GF Securities Co., Ltd.", zh: "广发证券股份有限公司" },
     start: "2024-06",
     end: "2024-08",
     summary: {
-      en: "Conducted in-depth industry research on elderly-care services, contributed to research reports for institutional clients and internal publication, and worked on macro research around demographics, consumer trends, home furnishing, and healthcare.",
-      zh: "深入参与养老服务行业研究，协助撰写机构客户报告和部门内刊，并围绕人口结构、消费趋势、家居和医疗健康等方向开展宏观与行业研究。",
+      en: "Contributed to institutional and internal research reports on elderly-care services, built a cohort-component forecasting model for population size and age structure, and analyzed around 1,000 products from the Shanghai Senior Care Expo.",
+      zh: "参与养老服务主题的机构客户报告和内部研究，搭建人口规模与年龄结构的 cohort-component 预测模型，并分析上海老博会约 1,000 个产品，辅助划分养老产品细分市场。",
     },
     href: "https://en.gf.com.cn/",
   },
@@ -46,13 +46,24 @@ export const work: TimelineEntry[] = [
 
 export const education: TimelineEntry[] = [
   {
+    title: { en: "PhD in Artificial Intelligence", zh: "人工智能博士" },
+    organization: { en: "HKUST(GZ)", zh: "香港科技大学（广州）" },
+    start: "2026-09",
+    end: "2029-06",
+    summary: {
+      en: "LLM applications in law and finance, especially agents, evaluation, and quantitative trading.",
+      zh: "研究大语言模型在法律和金融中的应用，重点是智能体、评测和量化交易。",
+    },
+    href: "https://www.hkust-gz.edu.cn/",
+  },
+  {
     title: { en: "MPhil in Artificial Intelligence", zh: "人工智能哲学硕士" },
     organization: { en: "HKUST(GZ)", zh: "香港科技大学（广州）" },
     start: "2024-09",
-    end: "2026-09",
+    end: "2026-06",
     summary: {
-      en: "LLM applications in finance, especially financial compliance, financial report generation, and structured knowledge reasoning.",
-      zh: "研究大语言模型在金融中的应用，尤其是金融合规、金融报告生成和结构化知识推理。",
+      en: "LLM applications in law and finance, especially compliance, structured reasoning, and report generation.",
+      zh: "研究大语言模型在法律和金融中的应用，尤其是合规、结构化推理和报告生成。",
     },
     href: "https://www.hkust-gz.edu.cn/",
   },

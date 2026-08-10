@@ -9,6 +9,6 @@ export type Publication = {
   date: string
   venue: string
   order: number
-  cover: string
+  cover?: string
   links: { paper?: string; code?: string; dataset?: string }
 }
