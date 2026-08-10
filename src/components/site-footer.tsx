@@ -9,7 +9,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
   const messages = getMessages(locale)
   return (
     <footer className="max-w-screen overflow-x-clip px-2">
-      <div className="mx-auto max-w-5xl border-x border-line bg-background/95">
+      <div className="mx-auto max-w-6xl border-x border-line bg-background/95">
         <div className="screen-line-top screen-line-bottom after:z-1 after:bg-border"><div className="stripe-divider h-12" /></div>
         <div className="screen-line-bottom grid gap-px bg-line font-mono text-xs sm:grid-cols-3">
           <FooterField label={messages.footer.visits}><VisitCounter href={siteConfig.counter.href} src={siteConfig.counter.src} locale={locale} /></FooterField>

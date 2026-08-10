@@ -30,7 +30,7 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
     ? "这个页面保留完整经历。首页只显示前五条用于快速确认背景，详细页面用于展开工作、教育和后续补充的奖项、技能或项目关联。"
     : "This page keeps the complete experience record. The profile page shows only the first five items for scanning; the detail page can carry work, education, and later awards, skills, or project links."
   return (
-    <div className="mx-auto max-w-5xl">
+    <div className="mx-auto max-w-6xl">
       <Panel>
         <PanelHeader><PanelTitle>{messages.sections.experience}</PanelTitle></PanelHeader>
         <PanelContent><p className="text-sm leading-6 text-muted-foreground">{description}</p></PanelContent>

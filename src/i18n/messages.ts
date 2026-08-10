@@ -7,6 +7,7 @@ export const messages = {
     language: "切换到中文",
     sections: {
       overview: "Overview",
+      contact: "Contact",
       research: "Research",
       publications: "Selected publications",
       projects: "Projects",
@@ -24,6 +25,7 @@ export const messages = {
     language: "Switch to English",
     sections: {
       overview: "简介",
+      contact: "联系",
       research: "研究方向",
       publications: "精选论文",
       projects: "项目",

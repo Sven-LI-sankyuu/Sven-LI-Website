@@ -32,7 +32,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className="[--separator-height:--spacing(8)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         <ProfileHeader locale={locale} />
         <div className="stripe-divider border-x border-line" />
         <Overview locale={locale} />

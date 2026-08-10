@@ -21,7 +21,6 @@ export function VisitCounter({ href, src, locale }: { href: string; src: string;
         className="h-auto max-h-10 max-w-full object-contain object-left"
         loading="lazy"
         onError={() => {
-          console.error("Visit counter failed to load", src)
           setFailed(true)
         }}
       />

@@ -19,7 +19,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const locale: Locale = rawLocale
   const messages = getMessages(locale)
   return (
-    <div className="mx-auto max-w-5xl">
+    <div className="mx-auto max-w-6xl">
       <Panel>
         <PanelHeader><PanelTitle>{messages.sections.blog}</PanelTitle></PanelHeader>
         <BlogList posts={getPublishedPosts(locale)} locale={locale} />

@@ -12,7 +12,7 @@ export type TimelineEntry = {
 export const work: TimelineEntry[] = [
   {
     title: { en: "AI Algorithm Engineer", zh: "AI 算法工程师" },
-    organization: { en: "Lingyue Technology Co., Ltd. (AI4Finance Startup)", zh: "灵悦科技有限公司（AI4Finance 创业公司）" },
+    organization: { en: "Lingyue Technology Co., Ltd. (AI4Finance Startup)", zh: "领阅科技有限公司（AI4Finance 创业公司）" },
     start: "2025-10",
     end: "2026-05",
     summary: {

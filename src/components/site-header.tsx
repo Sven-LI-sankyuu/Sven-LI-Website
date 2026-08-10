@@ -18,7 +18,7 @@ export function SiteHeader({ locale, hasBlog }: { locale: Locale; hasBlog: boole
 
   return (
     <header className="sticky top-0 z-50 max-w-screen overflow-x-clip bg-background/95 px-2 backdrop-blur">
-      <div className="screen-line-top screen-line-bottom mx-auto flex h-(--header-height) max-w-5xl items-center gap-2 border-x border-line px-2 sm:gap-4 sm:px-4">
+      <div className="screen-line-top screen-line-bottom mx-auto flex h-(--header-height) max-w-6xl items-center gap-2 border-x border-line px-2 sm:gap-4 sm:px-4">
         <Link href={`/${locale}`} className="shrink-0 font-heading text-sm font-medium" aria-label={siteConfig.title}>
           Sven LI
         </Link>

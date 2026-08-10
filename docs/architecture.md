@@ -64,11 +64,13 @@ locale 是所有页面的第一段路径；根路径由 Next.js 16 的 `proxy.ts
 首期首页由以下稳定区块组成：
 
 1. `SiteHeader`：固定或吸顶导航、品牌文字 `Siyuan LI`、语言切换、主题切换。
-2. `BiographyHero`：头像、姓名 `Siyuan (Sven) LI`、职位 `Mphil Student`、机构 HKUST(GZ)、简介、社交链接、`Download CV`。
+2. `BiographyHero`：头像、姓名 `Siyuan (Sven) LI`、职位 `PhD Student`、机构 HKUST(GZ)、简介、联系入口、`Download CV`。
 3. `ResearchIntro`：研究方向为 LLM Agent、Knowledge Graph、NLP Financial Applications、Auto-Financial Researching。
 4. `PublicationList`：经用户确认的精选论文适配参考 `Projects`/`ProjectItem` 的列表结构和交互，首页只显示前五条；超出五条时显示省略行和完整页入口，未超出五条时保留完整页入口。
 5. `ProjectsList`：个人项目列表，首页只显示首个确认项目 `presentation-skills`，并提供完整页入口。
 6. `SiteFooter`：访问计数器、字体声明和版权。
+
+`SocialLinks` 作为 `BiographyHero` 之后的独立联系区块，必须显式显示标题、图标和可点击文本，中文页要保留中文标签，英文页保留英文标签。这样邮箱、GitHub、LinkedIn 和 Google Scholar 不会退化成纯图标信息。
 
 `BiographyHero` 内嵌 Matrix 动画背景。MLP 动画保留为可用资源，但默认不作为全站背景挂载，避免首页视觉噪声压过文字内容。正文层必须拥有独立堆叠上下文和实色/半透明背景，确保动画不会覆盖文字、链接或焦点状态。
 
@@ -116,12 +118,13 @@ type Profile = {
   name: string
   displayName: LocalizedText
   role: LocalizedText
-  organization: { name: string; href: string }
+  organization: { name: LocalizedText; href: string }
+  location: LocalizedText
   email: string
   avatar: string
   summary: LocalizedText
   interests: LocalizedText[]
-  profiles: { github?: string; linkedin?: string; scholar?: string }
+  profiles: { kind: "email" | "github" | "linkedin" | "scholar"; label: LocalizedText; href: string }[]
 }
 
 type Experience = {
@@ -204,7 +207,7 @@ flowchart LR
 
 `references/Sven-LI-sankyuu.github.io/assets/media/matrix-transform-bg.html` 和 `mlp-bg.html` 是首期动画源文件。实现阶段复制到 `public/backgrounds/`，URL 固定为 `/backgrounds/matrix-transform-bg.html` 与 `/backgrounds/mlp-bg.html`。一个小型客户端组件在用户允许动态效果时渲染 iframe；iframe 设置 `title`、`aria-hidden="true"`、`pointer-events: none` 和零边框，父层只控制位置与透明度。当前页面只挂载 Matrix，MLP 作为后续局部装饰候选资源保留。两个 HTML 动画都接收 `theme=light|dark` 查询参数，并在没有参数时读取系统主题；浅色版本使用中性背景、灰黑网格和文字，深色版本保留暗色背景与低透明线条。MLP 使用文件内的 Three.js CDN，后续可以在保持 iframe URL 的条件下改为本地依赖。
 
-计数器使用原参数：用户名 `@Sven-LI-sankyuu`、名称 `Sven-LI-sankyuu`、主题 `moebooru`、`padding=7`、`pixelated=1`、`darkmode=auto`。计数器通过原生 `<img>` 由浏览器直接请求，并链接到 `https://count.getloli.com/`；探测结果显示普通命令行请求返回 HTTP 403，带浏览器 User-Agent 和站点 Referer 的请求返回 HTTP 200 与 SVG 图片，因此实现中不经过 Next.js 图片优化代理。加载失败时显示明确的不可用状态并记录控制台错误，页面主体仍可正常使用。
+计数器使用原参数：用户名 `@Sven-LI-sankyuu`、名称 `Sven-LI-sankyuu`、主题 `moebooru`、`padding=7`、`pixelated=1`、`darkmode=auto`。计数器通过原生 `<img>` 由浏览器直接请求，并链接到 `https://count.getloli.com/`；探测结果显示该服务可能对命令行或本地请求返回 Cloudflare 挑战、403 或 522，因此实现中不经过 Next.js 图片优化代理。加载失败时直接显示明确的不可用状态，不向页面主体传播错误。
 
 ## 字体与许可
 
