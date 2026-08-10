@@ -40,10 +40,19 @@ export function Timeline({
             <li key={`${entry.organization.en}-${entry.start}`} className="relative py-2 pl-6 first:pt-0 last:pb-0">
               <span className="absolute top-2.5 -left-1.25 size-2 rounded-full border border-background bg-foreground first:top-0" aria-hidden />
               <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <h3 className="font-medium">{localize(entry.title, locale)}</h3>
+                <h3 className="font-medium">
+                  {entry.href ? (
+                    <a className="link-underline inline-flex items-center gap-1" href={entry.href} target="_blank" rel="noreferrer">
+                      {localize(entry.organization, locale)}
+                      <ArrowUpRightIcon aria-hidden className="size-3" />
+                    </a>
+                  ) : (
+                    localize(entry.organization, locale)
+                  )}
+                </h3>
                 <time className="font-mono text-xs text-muted-foreground" dateTime={entry.start}>{entry.start.slice(0, 7)}{entry.end ? ` – ${entry.end.slice(0, 7)}` : " – Present"}</time>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">{entry.href ? <a className="link-underline inline-flex items-center gap-1" href={entry.href} target="_blank" rel="noreferrer">{localize(entry.organization, locale)}<ArrowUpRightIcon aria-hidden className="size-3" /></a> : localize(entry.organization, locale)}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{localize(entry.title, locale)}</p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{localize(entry.summary, locale)}</p>
             </li>
           ))}
