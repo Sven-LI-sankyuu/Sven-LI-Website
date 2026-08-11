@@ -29,7 +29,7 @@ export default async function PublicationPage({ params }: { params: Promise<{ lo
   if (!publication) notFound()
   const messages = getMessages(locale)
   return (
-    <div className="mx-auto max-w-4xl">
+    <div className="mx-auto max-w-4xl pt-6 sm:pt-8">
       <Panel>
         <PanelHeader><PanelTitle>{publication.title}</PanelTitle><p className="pb-4 text-sm text-muted-foreground">{publication.venue} · {publication.date}</p></PanelHeader>
         <PanelContent>

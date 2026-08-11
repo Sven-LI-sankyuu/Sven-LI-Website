@@ -28,7 +28,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
       ? "这里保留简历里确认过的项目。当前只有 presentation-skills 一项，后续项目继续按同样的结构补充。"
       : "This page keeps the confirmed projects from the resume. For now it only includes presentation-skills, and future projects can follow the same structure."
   return (
-    <div className="mx-auto max-w-6xl">
+    <div className="mx-auto max-w-6xl pt-6 sm:pt-8">
       <ProjectsList locale={locale} projects={projects} detail description={description} />
     </div>
   )

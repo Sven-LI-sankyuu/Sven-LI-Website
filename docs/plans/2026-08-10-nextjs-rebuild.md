@@ -46,7 +46,7 @@
 
 - 建立 `src/content/profile/`、`experience/`、`publications/<slug>/index.ts`、`src/i18n/` 和 `src/config/site.ts`；精选论文目录成员表达公开集合，`order` 表达顺序。
 - 完成 `/en`、`/zh` 和根路径语言协商，语言切换保留当前页面位置与偏好。
-- 以参考 `SiteHeader`、`Panel`、`ProfileHeader`、`Overview`、`SocialLinks`、`Projects` 列表和 Footer 组成首页，忠实复刻内容宽度、间距、字体层级和卡片密度。
+- 以参考 `SiteHeader`、`Panel`、`ProfileHeader`、`Overview`、`Projects` 列表和 Footer 组成首页，忠实复刻内容宽度、间距、字体层级和卡片密度；联系项直接并入 `Overview`，不再单独放置 `SocialLinks` 区块。
 - 完成 `system`、`light`、`dark` 三态主题，所有颜色来自全局 CSS 变量。
 - 接入 Matrix、MLP、简历下载和原生访问计数器；动画保持装饰属性并尊重 reduced motion。
 - 用 Playwright 截取桌面与移动端的中英文、浅色与深色组合，逐张检查文字、图片、iframe 和计数器。

@@ -29,7 +29,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
   if (!post) notFound()
   const messages = getMessages(locale)
   return (
-    <div className="mx-auto max-w-4xl">
+    <div className="mx-auto max-w-4xl pt-6 sm:pt-8">
       <Panel>
         <PanelHeader><PanelTitle>{post.title}</PanelTitle><p className="pb-4 text-sm text-muted-foreground"><time dateTime={post.date}>{post.date}</time>{post.updated ? ` · ${post.updated}` : ""}</p></PanelHeader>
         <PanelContent>

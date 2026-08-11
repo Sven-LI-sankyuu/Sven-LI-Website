@@ -29,9 +29,9 @@ function localeRoot(locale: Locale) {
   return path.join(contentRoot, locale)
 }
 
-function parsePost(locale: Locale, slug: string): BlogPost {
+function parsePost(locale: Locale, slug: string): BlogPost | undefined {
   const filePath = path.join(localeRoot(locale), slug, "index.md")
-  if (!fs.existsSync(filePath)) throw new Error(`Blog source not found: ${filePath}`)
+  if (!fs.existsSync(filePath)) return undefined
 
   const source = matter.read(filePath)
   const data = source.data as Partial<BlogFrontmatter>
@@ -51,6 +51,7 @@ export function getAllPosts(locale: Locale): BlogPost[] {
   return fs.readdirSync(root, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => parsePost(locale, entry.name))
+    .filter((post): post is BlogPost => Boolean(post))
     .sort((a, b) => b.date.localeCompare(a.date))
 }
 
@@ -60,5 +61,6 @@ export function getPublishedPosts(locale: Locale) {
 
 export function getPost(locale: Locale, slug: string) {
   const post = parsePost(locale, slug)
-  return post.draft ? undefined : post
+  if (!post || post.draft) return undefined
+  return post
 }

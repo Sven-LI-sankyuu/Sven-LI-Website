@@ -1,8 +1,6 @@
-import { CalendarDaysIcon, FileTextIcon, LinkIcon, MailIcon, MapPinIcon } from "lucide-react"
+import { BriefcaseBusinessIcon, CalendarDaysIcon, Code2Icon, GraduationCapIcon, LinkIcon, MailIcon, MapPinIcon } from "lucide-react"
 
-import { Button } from "@/components/base/ui/button"
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel"
-import { siteConfig } from "@/config/site"
 import { profile } from "@/content/profile"
 import type { Locale } from "@/i18n/locale"
 import { localize } from "@/i18n/locale"
@@ -12,9 +10,12 @@ export function Overview({ locale }: { locale: Locale }) {
   const messages = getMessages(locale)
   const items = [
     { icon: MapPinIcon, text: localize(profile.location, locale) },
-    { icon: MailIcon, text: profile.email, href: `mailto:${profile.email}` },
     { icon: LinkIcon, text: localize(profile.organization.name, locale), href: profile.organization.href },
     { icon: CalendarDaysIcon, text: locale === "en" ? "MPhil 2024-2026 · PhD 2026-2029" : "硕士 2024-2026 · 博士 2026-2029" },
+    { icon: MailIcon, text: profile.email, href: `mailto:${profile.email}` },
+    { icon: Code2Icon, text: "Sven-LI-sankyuu", href: "https://github.com/Sven-LI-sankyuu" },
+    { icon: BriefcaseBusinessIcon, text: "siyuan-li-8b820b218", href: "https://www.linkedin.com/in/siyuan-li-8b820b218/" },
+    { icon: GraduationCapIcon, text: "Google Scholar", href: "https://scholar.google.com/citations?user=haYxQEwAAAAJ&hl=zh-CN" },
   ]
 
   return (
@@ -27,9 +28,6 @@ export function Overview({ locale }: { locale: Locale }) {
             {href ? <a className="link-underline truncate" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>{text}</a> : <span>{text}</span>}
           </div>
         ))}
-        <Button nativeButton={false} variant="outline" size="sm" render={<a href={siteConfig.assets.cv} download className="w-fit" />}>
-          <FileTextIcon aria-hidden />{messages.actions.cv}
-        </Button>
       </PanelContent>
     </Panel>
   )

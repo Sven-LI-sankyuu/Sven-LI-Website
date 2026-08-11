@@ -24,9 +24,9 @@ export default async function LocaleLayout({ children, params }: Readonly<{ chil
 
   return (
     <div className="group/layout relative isolate min-h-dvh">
-      <div className="relative z-10">
+      <div className="relative z-10 flex min-h-dvh flex-col">
         <SiteHeader locale={locale} hasBlog={hasBlog} />
-        <main className="max-w-screen overflow-x-clip px-2">{children}</main>
+        <main className="flex-1 max-w-screen overflow-x-clip px-2">{children}</main>
         <SiteFooter locale={locale} />
       </div>
     </div>

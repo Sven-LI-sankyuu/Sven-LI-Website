@@ -18,7 +18,7 @@ export const messages = {
     },
     actions: { cv: "Curriculum vitae", paper: "Paper", code: "Code", dataset: "Dataset", details: "Details", openProject: "Open project", viewAllPublications: "View all publications", viewAllProjects: "View all projects", viewFullExperience: "View full experience" },
     states: { noPosts: "No published posts yet.", counterUnavailable: "Visit counter unavailable" },
-    footer: { visits: "Visits", typeface: "Typeface", source: "Design source" },
+    footer: { visits: "Visits", links: "Links", designReference: "Design reference", fontSource: "Font source" },
   },
   zh: {
     nav: { home: "主页", papers: "论文", projects: "项目", experience: "经历", blog: "博客" },
@@ -37,7 +37,7 @@ export const messages = {
     },
     actions: { cv: "个人简历", paper: "论文", code: "代码", dataset: "数据集", details: "详情", openProject: "打开项目", viewAllPublications: "查看全部论文", viewAllProjects: "查看全部项目", viewFullExperience: "查看完整经历" },
     states: { noPosts: "目前没有已发布文章。", counterUnavailable: "访问计数器暂时不可用" },
-    footer: { visits: "访问量", typeface: "字体", source: "设计来源" },
+    footer: { visits: "访问量", links: "友情链接", designReference: "设计参考", fontSource: "字体来源" },
   },
 } satisfies Record<Locale, object>
 

@@ -1,12 +1,10 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel"
 import { ProfileHeader } from "@/components/profile-header"
 import { PublicationsList } from "@/components/publications-list"
 import { ProjectsList } from "@/components/projects-list"
 import { Research } from "@/components/research"
-import { SocialLinks } from "@/components/social-links"
 import { Timeline } from "@/components/timeline"
 import { Overview } from "@/components/overview"
 import { education, work } from "@/content/experience"
@@ -36,7 +34,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <ProfileHeader locale={locale} />
         <div className="stripe-divider border-x border-line" />
         <Overview locale={locale} />
-        <SocialLinks locale={locale} />
         <div className="stripe-divider border-x border-line" />
         <Research locale={locale} />
         <div className="stripe-divider border-x border-line" />
@@ -46,10 +43,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="stripe-divider border-x border-line" />
         <Timeline id="experience" title={messages.sections.experience} entries={work} locale={locale} limit={5} moreHref={`/${locale}/experience`} />
         <Timeline id="education" title={messages.sections.education} entries={education} locale={locale} />
-        <Panel className="screen-line-top-none">
-          <PanelHeader><PanelTitle>{locale === "zh" ? "手动维护" : "Maintained by hand"}</PanelTitle></PanelHeader>
-          <PanelContent><p className="text-sm leading-6 text-muted-foreground">{locale === "zh" ? "Blog 文章直接来自 src/content/blog/ 下的 Markdown 文件，新增文章无需修改 React 组件。" : "Blog posts come directly from Markdown files under src/content/blog/, so writing a post does not require changing React components."}</p></PanelContent>
-        </Panel>
       </div>
     </div>
   )

@@ -64,13 +64,11 @@ locale 是所有页面的第一段路径；根路径由 Next.js 16 的 `proxy.ts
 首期首页由以下稳定区块组成：
 
 1. `SiteHeader`：固定或吸顶导航、品牌文字 `Siyuan LI`、语言切换、主题切换。
-2. `BiographyHero`：头像、姓名 `Siyuan (Sven) LI`、职位 `PhD Student`、机构 HKUST(GZ)、简介、联系入口、`Download CV`。
+2. `BiographyHero`：头像、姓名 `Siyuan (Sven) LI`、职位 `PhD Student`、机构 HKUST(GZ)、简介、`Download CV`。首屏采用参考项目式的双栏底对齐构图，让头像与简介在同一视觉基线结束，避免首屏被空白高度撑大。邮箱、GitHub、LinkedIn 和 Google Scholar 这四个联系项直接并入 `Overview`，不再单独渲染独立联系区块。
 3. `ResearchIntro`：研究方向为 LLM Agent、Knowledge Graph、NLP Financial Applications、Auto-Financial Researching。
 4. `PublicationList`：经用户确认的精选论文适配参考 `Projects`/`ProjectItem` 的列表结构和交互，首页只显示前五条；超出五条时显示省略行和完整页入口，未超出五条时保留完整页入口。
 5. `ProjectsList`：个人项目列表，首页只显示首个确认项目 `presentation-skills`，并提供完整页入口。
-6. `SiteFooter`：访问计数器、字体声明和版权。
-
-`SocialLinks` 作为 `BiographyHero` 之后的独立联系区块，必须显式显示标题、图标和可点击文本，中文页要保留中文标签，英文页保留英文标签。这样邮箱、GitHub、LinkedIn 和 Google Scholar 不会退化成纯图标信息。
+6. `SiteFooter`：访问计数器、友情链接和版权声明。
 
 `BiographyHero` 内嵌 Matrix 动画背景。MLP 动画保留为可用资源，但默认不作为全站背景挂载，避免首页视觉噪声压过文字内容。正文层必须拥有独立堆叠上下文和实色/半透明背景，确保动画不会覆盖文字、链接或焦点状态。
 
@@ -88,7 +86,7 @@ locale 是所有页面的第一段路径；根路径由 Next.js 16 的 `proxy.ts
 
 `docs/references/chanhdai-com.md` 是参考项目的定点索引。实现页面时优先读取索引列出的入口、组件和样式文件，避免扫描整个参考仓库。复用顺序固定为：页面外壳与区块结构、排版与语义色、基础 UI 原语、现有复合组件、最后才是本项目新增组件。
 
-首期明确复用 `Panel`、`ProfileHeader` 的信息层级、`Overview`、`SocialLinks`、`Experiences`、`Education`、`Timeline`、Blog 的 `PostList`/`PostItem`/`PostSearchInput`、文章的 `DocLayout`/`DocPageRoot`、`Prose` 以及 `screen-line-*` 和 `stripe-divider` 工具类。复用时只替换内容接口、locale 路径、个人品牌和数据来源，不复制参考项目的个人资料、registry、赞助、统计和品牌资产。
+首期明确复用 `Panel`、`ProfileHeader` 的信息层级、`Overview`、`Experiences`、`Education`、`Timeline`、Blog 的 `PostList`/`PostItem`/`PostSearchInput`、文章的 `DocLayout`/`DocPageRoot`、`Prose` 以及 `screen-line-*` 和 `stripe-divider` 工具类。联系项不再单独渲染成 `SocialLinks` 区块，而是并入 `Overview`。复用时只替换内容接口、locale 路径、个人品牌和数据来源，不复制参考项目的个人资料、registry、赞助、统计和品牌资产。
 
 语言切换、Matrix/MLP 动画包装器和访问计数器属于当前客观缺口。精选论文完整页、Projects 完整页和 Experience 完整页已经纳入首期页面，它们只复用现有布局，不重新定义交互模型。新增组件必须保持小边界：语言控件只处理 locale 路径与偏好，动画包装器只处理 iframe 生命周期与层级，计数器只处理外部图片状态，论文、项目与经历列表只把内容数据映射到参考 `Projects` 列表密度。新增组件不得重新定义参考项目已有的布局或按钮样式。
 
