@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: { default: siteConfig.title, template: `%s | ${siteConfig.title}` },
   description: siteConfig.description,
   authors: [{ name: "Siyuan LI" }],
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 }
 
 export const viewport: Viewport = {

@@ -11,6 +11,7 @@ import { education, work } from "@/content/experience"
 import { profile } from "@/content/profile"
 import { publications } from "@/content/publications"
 import { projects } from "@/content/projects"
+import { siteConfig } from "@/config/site"
 import { isLocale, type Locale } from "@/i18n/locale"
 import { localize } from "@/i18n/locale"
 import { getMessages } from "@/i18n/messages"
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: rawLocale } = await params
   if (!isLocale(rawLocale)) return {}
   const locale: Locale = rawLocale
-  return { title: profile.displayName, description: localize(profile.summary, locale) }
+  return { title: { absolute: siteConfig.title }, description: localize(profile.summary, locale) }
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {

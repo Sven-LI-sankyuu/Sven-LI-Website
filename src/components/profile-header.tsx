@@ -21,7 +21,6 @@ export function ProfileHeader({ locale }: { locale: Locale }) {
         <div className="flex h-full items-end justify-start">
           <Image src={profile.avatar} alt="Siyuan LI" width={176} height={176} priority className="size-32 rounded-xl object-cover ring-1 ring-border sm:size-44" />
         </div>
-        <figcaption className="pointer-events-none absolute right-2 bottom-2 z-10 font-mono text-xs text-muted-foreground sm:right-4 sm:bottom-4">Fig. 1.</figcaption>
       </figure>
       <div className="flex flex-col sm:row-span-2 sm:row-start-1">
         <div className="z-10 mt-auto border-t border-line">

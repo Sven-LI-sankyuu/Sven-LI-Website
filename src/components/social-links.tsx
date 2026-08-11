@@ -1,12 +1,13 @@
-import { ArrowUpRightIcon, BriefcaseBusiness, Code2, GraduationCap, Mail } from "lucide-react"
+import { ArrowUpRightIcon, Mail } from "lucide-react"
 
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel"
+import { GitHubIcon, GoogleScholarIcon, LinkedInIcon } from "@/components/social-icons"
 import { profile } from "@/content/profile"
 import type { Locale } from "@/i18n/locale"
 import { localize } from "@/i18n/locale"
 import { getMessages } from "@/i18n/messages"
 
-const icons = { email: Mail, github: Code2, linkedin: BriefcaseBusiness, scholar: GraduationCap }
+const icons = { email: Mail, github: GitHubIcon, linkedin: LinkedInIcon, scholar: GoogleScholarIcon }
 
 export function SocialLinks({ locale }: { locale: Locale }) {
   const messages = getMessages(locale)
@@ -22,9 +23,7 @@ export function SocialLinks({ locale }: { locale: Locale }) {
           const visibleText = localize(item.label, locale)
           return (
             <div key={visibleText} className="flex min-w-0 items-center gap-2 text-sm">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-md border border-muted-foreground/15 bg-muted ring-1 ring-border/50 ring-offset-1 ring-offset-background dark:ring-line [&_svg]:size-4 [&_svg]:text-muted-foreground" aria-hidden>
-                <Icon aria-hidden />
-              </span>
+              <Icon aria-hidden className="size-4 shrink-0 text-muted-foreground" />
               <a
                 className="link-underline min-w-0 truncate"
                 href={item.href}

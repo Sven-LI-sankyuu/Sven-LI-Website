@@ -1,6 +1,7 @@
-import { BriefcaseBusinessIcon, CalendarDaysIcon, Code2Icon, GraduationCapIcon, LinkIcon, MailIcon, MapPinIcon } from "lucide-react"
+import { CalendarDaysIcon, LinkIcon, MailIcon, MapPinIcon } from "lucide-react"
 
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel"
+import { GitHubIcon, GoogleScholarIcon, LinkedInIcon } from "@/components/social-icons"
 import { profile } from "@/content/profile"
 import type { Locale } from "@/i18n/locale"
 import { localize } from "@/i18n/locale"
@@ -13,9 +14,9 @@ export function Overview({ locale }: { locale: Locale }) {
     { icon: LinkIcon, text: localize(profile.organization.name, locale), href: profile.organization.href },
     { icon: CalendarDaysIcon, text: locale === "en" ? "MPhil 2024-2026 · PhD 2026-2029" : "硕士 2024-2026 · 博士 2026-2029" },
     { icon: MailIcon, text: profile.email, href: `mailto:${profile.email}` },
-    { icon: Code2Icon, text: "Sven-LI-sankyuu", href: "https://github.com/Sven-LI-sankyuu" },
-    { icon: BriefcaseBusinessIcon, text: "siyuan-li-8b820b218", href: "https://www.linkedin.com/in/siyuan-li-8b820b218/" },
-    { icon: GraduationCapIcon, text: "Google Scholar", href: "https://scholar.google.com/citations?user=haYxQEwAAAAJ&hl=zh-CN" },
+    { icon: GitHubIcon, text: "GitHub", href: "https://github.com/Sven-LI-sankyuu" },
+    { icon: LinkedInIcon, text: "LinkedIn", href: "https://www.linkedin.com/in/siyuan-li-8b820b218/" },
+    { icon: GoogleScholarIcon, text: "Google Scholar", href: "https://scholar.google.com/citations?user=haYxQEwAAAAJ&hl=zh-CN" },
   ]
 
   return (

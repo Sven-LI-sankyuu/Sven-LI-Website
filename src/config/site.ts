@@ -1,6 +1,6 @@
 export const siteConfig = {
   origin: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  title: "Siyuan (Sven) LI",
+  title: "Sven LI Personal Website",
   description: "Reliable LLM systems for high-stakes legal and financial applications, with a focus on compliance, structured reasoning, report generation, and agentic workflows.",
   counter: {
     href: "https://count.getloli.com/",
