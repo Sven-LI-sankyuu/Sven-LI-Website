@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!isLocale(rawLocale)) return {}
   const messages = getMessages(rawLocale)
   return {
-    title: messages.sections.experience,
+    title: messages.sections.experiencePage,
     description:
       rawLocale === "zh"
         ? "完整的经历页面，保留工作、教育，以及后续可扩展的技能、语言、奖项和项目关联。"
@@ -32,7 +32,11 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
   return (
     <div className="mx-auto max-w-6xl">
       <Panel>
-        <PanelHeader><PanelTitle>{messages.sections.experience}</PanelTitle></PanelHeader>
+        <PanelHeader>
+          <PanelTitle asChild className="text-4xl">
+            <h1>{messages.sections.experiencePage}</h1>
+          </PanelTitle>
+        </PanelHeader>
         <PanelContent><p className="text-sm leading-6 text-muted-foreground">{description}</p></PanelContent>
       </Panel>
       <div className="stripe-divider border-x border-line" />
