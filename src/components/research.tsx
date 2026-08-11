@@ -23,10 +23,15 @@ export function Research({ locale }: { locale: Locale }) {
           {locale === "zh" ? "我的研究围绕法律和金融高风险场景中的大语言模型系统，重点放在智能体、知识图谱、合规、报告生成和自动化金融研究。" : "My research centers on LLM systems for high-stakes legal and financial settings, with a focus on agents, knowledge graphs, compliance, report generation, and automated financial research."}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
-        {interests.map((interest, index) => {
-          const Icon = icons[index]
-          return <div key={interest.en} className="flex items-start gap-3 border border-line bg-background/80 p-3"><span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md border border-line bg-muted/50 text-muted-foreground"><Icon aria-hidden className="size-4" /></span><span className="text-sm leading-6">{localize(interest, locale)}</span></div>
-        })}
+          {interests.map((interest, index) => {
+            const Icon = icons[index]
+            return (
+              <div key={interest.en} className="flex items-start gap-3 border border-line bg-background/80 p-3">
+                <Icon aria-hidden className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                <span className="text-sm leading-6">{localize(interest, locale)}</span>
+              </div>
+            )
+          })}
         </div>
       </PanelContent>
     </Panel>
