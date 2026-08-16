@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { ProfileHeader } from "@/components/profile-header"
 import { PublicationsList } from "@/components/publications-list"
 import { ProjectsList } from "@/components/projects-list"
+import { GamesList } from "@/components/games-list"
 import { Research } from "@/components/research"
 import { Timeline } from "@/components/timeline"
 import { Overview } from "@/components/overview"
@@ -11,6 +12,7 @@ import { education, work } from "@/content/experience"
 import { profile } from "@/content/profile"
 import { publications } from "@/content/publications"
 import { projects } from "@/content/projects"
+import { games } from "@/content/games"
 import { siteConfig } from "@/config/site"
 import { isLocale, type Locale } from "@/i18n/locale"
 import { localize } from "@/i18n/locale"
@@ -41,6 +43,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <PublicationsList locale={locale} publications={publications} limit={5} moreHref={`/${locale}/publications`} />
         <div className="stripe-divider border-x border-line" />
         <ProjectsList locale={locale} projects={projects} limit={1} moreHref={`/${locale}/projects`} />
+        <div className="stripe-divider border-x border-line" />
+        <GamesList locale={locale} games={games} limit={1} moreHref={`/${locale}/games`} />
         <div className="stripe-divider border-x border-line" />
         <Timeline id="experience" title={messages.sections.experience} entries={work} locale={locale} limit={5} moreHref={`/${locale}/experience`} />
         <Timeline id="education" title={messages.sections.education} entries={education} locale={locale} />

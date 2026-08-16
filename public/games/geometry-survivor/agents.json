@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rule",
+    "name": "规则策略（势场法）",
+    "desc": "手写势场规则 · 稳定存活 10 分钟 · 无需下载",
+    "file": ""
+  },
+  {
+    "id": "standard",
+    "name": "PPO 标准版",
+    "desc": "PPO 课程学习 · 2000 万步",
+    "file": "policy.bin"
+  },
+  {
+    "id": "bc",
+    "name": "模仿学习版",
+    "desc": "行为克隆 · 学习势场规则 · 91.5% 动作一致",
+    "file": "policy_bc.bin"
+  }
+]
