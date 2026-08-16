@@ -26,11 +26,11 @@ export function SiteHeader({ locale, hasBlog }: { locale: Locale; hasBlog: boole
           {navLink(`/${locale}`, messages.nav.home, <HomeIcon aria-hidden />)}
           {navLink(`/${locale}/publications`, messages.nav.papers, <BookOpenTextIcon aria-hidden />)}
           {navLink(`/${locale}/projects`, messages.nav.projects, <FolderKanbanIcon aria-hidden />)}
-          {navLink(`/${locale}/games`, messages.nav.games, <Gamepad2Icon aria-hidden />)}
           {navLink(`/${locale}/experience`, messages.nav.experience, <BriefcaseBusinessIcon aria-hidden />)}
           {hasBlog && navLink(`/${locale}/blog`, messages.nav.blog, <BookOpenTextIcon aria-hidden />)}
         </nav>
         <div className="ml-auto flex items-center gap-0.5">
+          {navLink(`/${locale}/games`, messages.nav.games, <Gamepad2Icon aria-hidden />)}
           <LocaleToggle locale={locale} />
           <ThemeToggle locale={locale} />
         </div>
