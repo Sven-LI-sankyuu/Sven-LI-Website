@@ -6,6 +6,12 @@
     "file": ""
   },
   {
+    "id": "v4",
+    "name": "PPO v4（逃生+奖励修复）",
+    "desc": "PPO 奖励修复版 · 10分钟存活 mean=203s（满0/10）",
+    "file": "policy_v4.bin"
+  },
+  {
     "id": "standard",
     "name": "PPO 标准版",
     "desc": "PPO 课程学习 · 2000 万步",
