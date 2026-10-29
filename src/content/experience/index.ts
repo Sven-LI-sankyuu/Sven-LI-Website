@@ -11,7 +11,7 @@ export type TimelineEntry = {
 
 export const work: TimelineEntry[] = [
   {
-    title: { en: "AI Algorithm Engineer", zh: "AI 算法工程师" },
+    title: { en: "AI Algorithm Engineer · Part-time", zh: "AI 算法工程师 · 兼职" },
     organization: { en: "Lingyue Technology Co., Ltd. (AI4Finance Startup)", zh: "领阅科技有限公司（AI4Finance Startup）" },
     start: "2025-10",
     end: "2026-05",
@@ -22,7 +22,7 @@ export const work: TimelineEntry[] = [
     },
   },
   {
-    title: { en: "Credit Bond Research Assistant", zh: "信用债研究助理" },
+    title: { en: "Credit Bond Research Assistant · Internship", zh: "信用债研究助理 · 实习" },
     organization: { en: "Beijing Dingnuo Investment Co., Ltd.", zh: "北京鼎诺投资有限公司" },
     start: "2024-06",
     end: "2024-08",
@@ -33,7 +33,7 @@ export const work: TimelineEntry[] = [
     href: "http://eyounginvest.com/dingnuo/about/about/index.html",
   },
   {
-    title: { en: "Industry Research Institute Research Assistant", zh: "产业研究院 研究助理" },
+    title: { en: "Industry Research Institute Research Assistant · Internship", zh: "产业研究院 研究助理 · 实习" },
     organization: { en: "GF Securities Co., Ltd.", zh: "广发证券股份有限公司" },
     start: "2024-06",
     end: "2024-08",
