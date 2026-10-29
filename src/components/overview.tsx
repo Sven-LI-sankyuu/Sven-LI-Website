@@ -11,7 +11,7 @@ export function Overview({ locale }: { locale: Locale }) {
   const messages = getMessages(locale)
   const items = [
     { icon: MapPinIcon, text: localize(profile.location, locale) },
-    { icon: CalendarDaysIcon, text: locale === "en" ? "MPhil 2024-2026 · PhD 2026-2029" : "硕士 2024-2026 · 博士 2026-2029" },
+    { icon: CalendarDaysIcon, text: locale === "en" ? "PhDing 2026-2030E" : "博士在读 2026-2030E" },
     { icon: MailIcon, text: profile.email, href: `mailto:${profile.email}` },
     { icon: GitHubIcon, text: "GitHub", href: "https://github.com/Sven-LI-sankyuu" },
     { icon: LinkedInIcon, text: "LinkedIn", href: "https://www.linkedin.com/in/siyuan-li-8b820b218/" },

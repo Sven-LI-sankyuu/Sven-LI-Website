@@ -53,7 +53,7 @@ export function Timeline({
                 <time className="font-mono text-xs text-muted-foreground" dateTime={entry.start}>{entry.start.slice(0, 7)}{entry.end ? ` – ${entry.end.slice(0, 7)}` : " – Present"}</time>
               </div>
               <p className="mt-1 text-sm text-muted-foreground">{localize(entry.title, locale)}</p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">{localize(entry.summary, locale)}</p>
+              {entry.summary && <p className="mt-2 text-sm leading-6 text-muted-foreground">{localize(entry.summary, locale)}</p>}
             </li>
           ))}
           {hiddenCount > 0 && moreHref && (

@@ -5,7 +5,7 @@ export type TimelineEntry = {
   organization: LocalizedText
   start: string
   end?: string
-  summary: LocalizedText
+  summary?: LocalizedText
   href?: string
 }
 
@@ -43,6 +43,13 @@ export const work: TimelineEntry[] = [
     },
     href: "https://en.gf.com.cn/",
   },
+  {
+    title: { en: "Vice President · Student Leadership", zh: "副主席 · 学生组织" },
+    organization: { en: "HKUST Quant Trading Society (USTQuant)", zh: "香港科技大学量化交易社团（USTQuant）" },
+    start: "2024",
+    end: "2026",
+    href: "https://www.ustquant.hk/",
+  },
 ]
 
 export const education: TimelineEntry[] = [
@@ -50,7 +57,7 @@ export const education: TimelineEntry[] = [
     title: { en: "PhD in Artificial Intelligence", zh: "人工智能博士" },
     organization: { en: "HKUST(GZ)", zh: "香港科技大学（广州）" },
     start: "2026-09",
-    end: "2029-06",
+    end: "2030E",
     summary: {
       en: "LLM applications in law and finance, especially agents, evaluation, and quantitative trading.",
       zh: "研究大语言模型在法律和金融中的应用，重点是智能体、评测和量化交易。",
