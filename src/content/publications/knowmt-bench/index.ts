@@ -13,7 +13,7 @@ export const knowMtBench: Publication = {
   },
   authors: ["Junhao Chen*", "Yu Huang*", "Siyuan Li*", "Rui Yao", "Hanqian Li", "Hanyu Zhang", "Jungang Li", "Jian Chen", "Bowen Wang", "Xuming Hu"],
   date: "2025-09-26",
-  venue: "arXiv preprint",
+  venue: "Findings of EMNLP 2026",
   order: 3,
   cover: "/assets/publications/knowmt-bench/featured.jpg",
   links: {

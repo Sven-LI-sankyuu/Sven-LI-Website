@@ -57,7 +57,6 @@ export function ProjectsList({
   )
 }
 function ProjectItem({ locale, project, detail }: { locale: Locale; project: Project; detail: boolean }) {
-  const messages = getMessages(locale)
   return (
     <li className="group grid gap-4 py-5 sm:grid-cols-[9rem_minmax(0,1fr)] lg:grid-cols-[11rem_minmax(0,1fr)]">
       <div className="flex aspect-[8/5] w-full items-center justify-center rounded-md border border-line bg-muted/40 text-muted-foreground">
@@ -80,12 +79,6 @@ function ProjectItem({ locale, project, detail }: { locale: Locale; project: Pro
               {tag}
             </span>
           ))}
-        </div>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Button nativeButton={false} variant="outline" size="sm" className="h-7 text-xs" render={<a href={project.link} target="_blank" rel="noreferrer" />}>
-            <span>{messages.actions.openProject}</span>
-            <ArrowUpRightIcon aria-hidden />
-          </Button>
         </div>
       </div>
     </li>

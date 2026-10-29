@@ -77,7 +77,7 @@ function PublicationItem({ locale, publication, detail }: { locale: Locale; publ
 
 function MorePublicationsItem({ locale, count, href }: { locale: Locale; count: number; href: string }) {
   const messages = getMessages(locale)
-  const text = locale === "zh" ? `还有 ${count} 篇精选论文` : `${count} more selected publication${count > 1 ? "s" : ""}`
+  const text = locale === "zh" ? `还有 ${count} 项研究成果` : `${count} more selected research item${count > 1 ? "s" : ""}`
   return (
     <li className="flex flex-wrap items-center justify-between gap-3 py-4 text-sm text-muted-foreground">
       <span className="font-mono text-lg leading-none" aria-hidden>...</span>

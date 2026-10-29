@@ -1,4 +1,4 @@
-import { CalendarDaysIcon, LinkIcon, MailIcon, MapPinIcon } from "lucide-react"
+import { CalendarDaysIcon, MailIcon, MapPinIcon } from "lucide-react"
 
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel"
 import { GitHubIcon, GoogleScholarIcon, LinkedInIcon } from "@/components/social-icons"
@@ -11,7 +11,6 @@ export function Overview({ locale }: { locale: Locale }) {
   const messages = getMessages(locale)
   const items = [
     { icon: MapPinIcon, text: localize(profile.location, locale) },
-    { icon: LinkIcon, text: localize(profile.organization.name, locale), href: profile.organization.href },
     { icon: CalendarDaysIcon, text: locale === "en" ? "MPhil 2024-2026 · PhD 2026-2029" : "硕士 2024-2026 · 博士 2026-2029" },
     { icon: MailIcon, text: profile.email, href: `mailto:${profile.email}` },
     { icon: GitHubIcon, text: "GitHub", href: "https://github.com/Sven-LI-sankyuu" },

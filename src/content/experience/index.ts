@@ -15,6 +15,7 @@ export const work: TimelineEntry[] = [
     organization: { en: "Lingyue Technology Co., Ltd. (AI4Finance Startup)", zh: "领阅科技有限公司（AI4Finance Startup）" },
     start: "2025-10",
     end: "2026-05",
+    href: "https://www.textmind-gz.com/",
     summary: {
       en: "Developed and delivered a compliance component for an investment-advisory system, organized the existing compliance framework into a hierarchical rule structure, and built data pipelines for heterogeneous financial data, company knowledge graphs, and downstream quantitative research.",
       zh: "为投资顾问系统开发并交付合规模块，将现有合规框架整理为层级规则结构，并搭建面向新闻、公司信息和市场数据的数据管道，产出结构化数据与公司知识图谱，服务量化研究。",
@@ -72,7 +73,7 @@ export const education: TimelineEntry[] = [
     organization: { en: "Sun Yat-sen University", zh: "中山大学" },
     start: "2020-09",
     end: "2024-07",
-    summary: { en: "GPA 3.6/4.0, with coursework in microeconomics, macroeconomics, financial accounting, intermediate financial accounting, econometrics, and corporate finance.", zh: "GPA 3.6/4.0，主修微观经济学、宏观经济学、财务会计、中级财务会计、计量经济学与公司金融等课程。" },
+    summary: { en: "Coursework in microeconomics, macroeconomics, financial accounting, intermediate financial accounting, econometrics, and corporate finance.", zh: "修读微观经济学、宏观经济学、财务会计、中级财务会计、计量经济学与公司金融等课程。" },
     href: "https://www.sysu.edu.cn/",
   },
 ]
