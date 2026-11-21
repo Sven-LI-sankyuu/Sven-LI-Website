@@ -24,7 +24,7 @@ export function SiteHeader({ locale, hasBlog }: { locale: Locale; hasBlog: boole
         </Link>
         <nav className="hidden flex-1 items-center justify-center gap-1 md:flex" aria-label="Primary navigation">
           {navLink(`/${locale}`, messages.nav.home, <HomeIcon aria-hidden />)}
-          {navLink(`/${locale}/publications`, messages.nav.papers, <BookOpenTextIcon aria-hidden />)}
+          {navLink(`/${locale}/papers`, messages.nav.papers, <BookOpenTextIcon aria-hidden />)}
           {navLink(`/${locale}/projects`, messages.nav.projects, <FolderKanbanIcon aria-hidden />)}
           {navLink(`/${locale}/experience`, messages.nav.experience, <BriefcaseBusinessIcon aria-hidden />)}
           {hasBlog && navLink(`/${locale}/blog`, messages.nav.blog, <BookOpenTextIcon aria-hidden />)}

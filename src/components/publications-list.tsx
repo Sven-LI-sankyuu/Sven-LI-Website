@@ -29,7 +29,7 @@ export function PublicationsList({
   const visiblePublications = limit ? publications.slice(0, limit) : publications
   const hiddenCount = publications.length - visiblePublications.length
   return (
-    <Panel id="publications">
+    <Panel id="papers">
       <PanelHeader>
         <PanelTitle>{messages.sections.publications}<sup className="ml-1 text-sm text-muted-foreground">{publications.length}</sup></PanelTitle>
         {description && <PanelDescription>{description}</PanelDescription>}
@@ -58,7 +58,7 @@ function PublicationItem({ locale, publication, detail }: { locale: Locale; publ
       )}
       <div className="min-w-0">
         <div className="mb-1 flex items-start justify-between gap-3">
-          <h3 className="text-lg leading-snug font-medium text-balance"><Link href={`/${locale}/publications/${publication.slug}`} className="link-underline">{publication.title}</Link></h3>
+          <h3 className="text-lg leading-snug font-medium text-balance"><Link href={`/${locale}/papers/${publication.slug}`} className="link-underline">{publication.title}</Link></h3>
           <span className="shrink-0 font-mono text-xs text-muted-foreground">{publication.date.slice(0, 4)}</span>
         </div>
         <p className="mt-2 text-sm leading-6"><PublicationAuthors authors={publication.authors} /></p>

@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: rawLocale, slug } = await params
   if (!isLocale(rawLocale)) return {}
   const publication = getPublication(slug)
-  return publication ? { title: publication.title, description: localize(publication.summary, rawLocale) } : {}
+  return publication ? { title: publication.title, description: localize(publication.summary, rawLocale), alternates: { canonical: `/${rawLocale}/papers/${slug}` } } : {}
 }
 
-export default async function PublicationPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+export default async function PaperPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale: rawLocale, slug } = await params
   if (!isLocale(rawLocale)) notFound()
   const locale: Locale = rawLocale
@@ -37,7 +37,7 @@ export default async function PublicationPage({ params }: { params: Promise<{ lo
           <div className="mt-6"><h2 className="mb-2 text-lg font-medium">{locale === "zh" ? "摘要" : "Abstract"}</h2><Prose><p>{localize(publication.abstract, locale)}</p></Prose></div>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">{publication.links.paper && <a className="link-underline" href={publication.links.paper} target="_blank" rel="noreferrer">{messages.actions.paper}</a>}{publication.links.code && <a className="link-underline" href={publication.links.code} target="_blank" rel="noreferrer">{messages.actions.code}</a>}{publication.links.dataset && <a className="link-underline" href={publication.links.dataset} target="_blank" rel="noreferrer">{messages.actions.dataset}</a>}</div>
           <div className="mt-8 border-t border-line pt-4"><h2 className="mb-2 text-lg font-medium">{locale === "zh" ? "作者" : "Authors"}</h2><p className="text-sm leading-6"><PublicationAuthors authors={publication.authors} /></p></div>
-          <Link className="mt-8 inline-block text-sm link-underline" href={`/${locale}/publications`}>← {messages.sections.publications}</Link>
+          <Link className="mt-8 inline-block text-sm link-underline" href={`/${locale}/papers`}>← {messages.sections.publications}</Link>
         </PanelContent>
       </Panel>
     </div>

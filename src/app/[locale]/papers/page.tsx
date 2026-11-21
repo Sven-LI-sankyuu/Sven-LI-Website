@@ -14,19 +14,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: getMessages(locale).sections.publications,
     description:
       locale === "zh"
-        ? "完整的精选研究成果列表，包含更长摘要、作者、发表信息以及论文、代码和数据链接。"
-        : "The complete selected-research page, with longer abstracts, authors, venue details, and paper, code, and dataset links.",
-    alternates: { canonical: `/${locale}/publications` },
+        ? "精选研究成果与预印本，包含摘要、作者信息以及论文、代码和数据链接。"
+        : "Selected research papers and preprints, with abstracts, authors, and links to papers, code, and datasets.",
+    alternates: { canonical: `/${locale}/papers` },
   }
 }
 
-export default async function PublicationsPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function PapersPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: rawLocale } = await params
   if (!isLocale(rawLocale)) notFound()
   const locale: Locale = rawLocale
   const description = locale === "zh"
-    ? "这里是完整的精选研究成果页面。首页只承担快速扫读，这里保留更长摘要、作者列表、发表信息和外部链接。"
-    : "This is the complete selected-research page. The profile page stays scannable; this page keeps longer abstracts, authors, venue details, and external links."
+    ? "这里收录精选研究成果和预印本，包含摘要、作者信息，以及论文、代码和数据链接。"
+    : "A collection of selected research papers and preprints, with abstracts, author lists, and links to papers, code, and datasets."
   return (
     <div className="mx-auto max-w-6xl pt-6 sm:pt-8">
       <PublicationsList locale={locale} publications={publications} detail description={description} />

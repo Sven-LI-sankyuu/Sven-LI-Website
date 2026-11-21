@@ -38,7 +38,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="stripe-divider border-x border-line" />
         <Research locale={locale} />
         <div className="stripe-divider border-x border-line" />
-        <PublicationsList locale={locale} publications={publications} limit={5} moreHref={`/${locale}/publications`} />
+        <PublicationsList locale={locale} publications={publications} limit={5} moreHref={`/${locale}/papers`} />
         <div className="stripe-divider border-x border-line" />
         <ProjectsList locale={locale} projects={projects} limit={1} moreHref={`/${locale}/projects`} />
         <div className="stripe-divider border-x border-line" />
