@@ -12,8 +12,8 @@ export const profile = {
   email: "lisiyuansven@foxmail.com",
   avatar: "/assets/profile/avatar.jpg",
   summary: {
-    en: "I'm a PhD student at HKUST(GZ), working on LLMs and their applications in law and finance. Outside research, I like wandering around, hunting for good food, fishing, hiking, and running. I also enjoy vibe-coding little projects of questionable usefulness.",
-    zh: "我在香港科技大学（广州）读博，研究大语言模型在法律和金融领域的应用。平时喜欢到处逛逛、找好吃的，也喜欢钓鱼、爬山和跑步。偶尔还会用 vibe coding 捣鼓一些没什么用的小项目。",
+    en: "I'm a PhD student at HKUST(GZ), working on LLMs and their applications in finance. Outside research, I like wandering around, hunting for good food, fishing, hiking, and running. I also enjoy vibe-coding little projects of questionable usefulness.",
+    zh: "我在香港科技大学（广州）读博，研究大语言模型在金融领域的应用。平时喜欢到处逛逛、找好吃的，也喜欢钓鱼、爬山和跑步。偶尔还会用 vibe coding 捣鼓一些没什么用的小项目。",
   },
   interests: [
     { en: "LLM agents", zh: "大语言模型智能体" },
