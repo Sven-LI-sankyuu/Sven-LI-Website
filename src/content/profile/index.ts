@@ -12,8 +12,8 @@ export const profile = {
   email: "lisiyuansven@foxmail.com",
   avatar: "/assets/profile/avatar.jpg",
   summary: {
-    en: "My research focuses on building reliable LLM systems for high-stakes legal and financial applications. I am particularly interested in structured representations, agentic workflows, and regulatory reasoning, together with evaluation methods that detect omissions, factual errors, and uncertainty in complex model outputs.",
-    zh: "我的研究聚焦于面向法律和金融高风险场景的可靠大语言模型系统，重点关注结构化表示、智能体流程和监管推理，并研究用于检测复杂模型输出中的遗漏、事实错误和不确定性的评测方法。",
+    en: "I'm a PhD student at HKUST(GZ), working on LLMs and their applications in law and finance. Outside research, I like wandering around, hunting for good food, fishing, hiking, and running. I also enjoy vibe-coding little projects of questionable usefulness.",
+    zh: "我在香港科技大学（广州）读博，研究大语言模型在法律和金融领域的应用。平时喜欢到处逛逛、找好吃的，也喜欢钓鱼、爬山和跑步。偶尔还会用 vibe coding 捣鼓一些没什么用的小项目。",
   },
   interests: [
     { en: "LLM agents", zh: "大语言模型智能体" },
